@@ -14,13 +14,7 @@ body {
   justify-content: center;
   align-items: center;
   gap: 30px;
-  background: linear-gradient(
-    325deg,
-    #03001e 0%,
-    #7303c0 30%,
-    #ec38bc 70%,
-    #fdeff9 100%
-  );
+  background: linear-gradient(325deg, #09042a 0%, #6f00a8 30%, #ec38bc 70%, #fdeff9 100%);
   padding: 40px 60px;
 }
 
@@ -42,6 +36,7 @@ h2 {
   text-transform: uppercase;
   cursor: pointer;
   font-weight: 600;
+  transition: color 0.3s, background-color 0.3s;
 }
 
 .reset:focus {
@@ -67,21 +62,22 @@ h2 {
   align-items: center;
   justify-content: center;
   background-color: #fff;
-
   font-size: 3em;
   transform: rotateY(180deg);
   transition: 0.25s;
+  box-shadow: 0 5px 7px rgba(0, 0, 0, 0.3);
+  border-radius: 0.25rem;
 }
 
 .item::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: #404040;
-  /* opacity: 0.85; */
+  background: hwb(50 75% 10%);
   transition: 0.25s;
   transform: rotateY(0deg);
   backface-visibility: hidden;
+  border-radius: 0.25rem;
 }
 
 .item.boxOpen {
@@ -91,4 +87,16 @@ h2 {
 .boxOpen::after,
 .boxMatch::after {
   transform: rotateY(180deg);
+}
+
+#modal {
+  position: fixed;
+  display: none;
+  background-color: #fff;
+  font-size: 3em;
+  transform: rotateY(360deg);
+  transition: 0.5s;
+  box-shadow: 0 5px 7px rgba(0, 0, 0, 0.3);
+  border-radius: 1rem;
+  padding: 1rem;
 }
