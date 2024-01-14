@@ -17,7 +17,13 @@ Acesse: [https://luandiasrj.github.io/js-emoji-memory-game/](https://luandiasrj.
 
 ### Melhorias
 
-- **Embaralhamento de emojis:** Substituída a função `sort()` do JavaScript, pois não é a melhor maneira de embaralhar um array. Ela pode não fornecer uma distribuição uniforme, o que levava a um embaralhamento inadequado dos emojis.
+- **Adição de sombras**: Para dar maior sensação de profundidade foi adicionada sombra nas cartas.
+
+- **Alerta mudado para um modal**: Um alerta não combinava com o contexto do jogo.
+
+- **Correção para o Firefox**: O CSS apresentado não funcionava no firefox, nunca era mostrado o verso da carta.
+
+- **Embaralhamento de emojis:** Substituída a função `sort()` do JavaScript, pois não é a melhor maneira de embaralhar um array. Ela não fornecia uma distribuição uniforme, o que levava a um embaralhamento inadequado dos emojis.
 
 - **Manipulação de eventos:** Se um usuário clicasse rapidamente e abrisse mais de duas cartas antes que a função `setTimeout` fosse executada, isso poderia levar a um comportamento inesperado. A solução foi desabilitar todos os cliques até que a verificação seja concluída.
 

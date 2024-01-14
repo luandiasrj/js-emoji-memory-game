@@ -50,34 +50,39 @@ h2 {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  transform-style: preserve-3d;
   perspective: 500px;
 }
 
-.item {
+.item,
+.item::after {
   position: relative;
   width: 100px;
   height: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  line-height: 100px;
+  box-shadow: 0 5px 7px rgba(0, 0, 0, 0.3);
+  border-radius: 0.25rem;
+}
+
+.item {
+  text-align: center;
   background-color: #fff;
   font-size: 3em;
   transform: rotateY(180deg);
-  transition: 0.25s;
-  box-shadow: 0 5px 7px rgba(0, 0, 0, 0.3);
-  border-radius: 0.25rem;
+  transition: 0.5s;
+  transform-style: preserve-3d;
 }
 
 .item::after {
   content: "";
   position: absolute;
-  inset: 0;
-  background: hwb(50 75% 10%);
-  transition: 0.25s;
-  transform: rotateY(0deg);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #f9f9f9;
+  font-size: 30px;
   backface-visibility: hidden;
-  border-radius: 0.25rem;
+  transform: rotateY(180deg);
 }
 
 .item.boxOpen {
@@ -91,12 +96,19 @@ h2 {
 
 #modal {
   position: fixed;
-  display: none;
   background-color: #fff;
   font-size: 3em;
-  transform: rotateY(360deg);
-  transition: 0.5s;
+  animation: zoom 0.5s forwards;
   box-shadow: 0 5px 7px rgba(0, 0, 0, 0.3);
   border-radius: 1rem;
   padding: 1rem;
+}
+
+@keyframes zoom {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
 }
