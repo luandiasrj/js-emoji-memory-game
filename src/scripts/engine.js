@@ -76,10 +76,10 @@ function checkMatch() {
   canClick = true;
 
   if (document.querySelectorAll(".boxMatch").length === emojis.length) {
-    // Adiciona no body a div de parabéns
+    // Adiciona no .container a div de parabéns
     let parabens = document.createElement("div");
     parabens.id = "modal";
     parabens.innerHTML = "Parabéns, você venceu!";
-    document.body.appendChild(parabens);
+    document.querySelector(".container").appendChild(parabens);
   }
 }
